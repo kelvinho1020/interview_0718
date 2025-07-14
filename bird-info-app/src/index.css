@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	body {
+		font-family: "Noto Sans TC";
+		line-height: 1.6;
+		background-color: #f5f5f5;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+@layer components {
+	.nav-link {
+		@apply block px-5 py-3 text-gray-600 text-sm transition-all duration-300 hover:bg-accent hover:text-primary hover:border-r-4 hover:border-secondary;
+	}
+	
+	.nav-link-mobile {
+		@apply block px-4 py-2 mx-4 rounded text-gray-600 text-sm transition-all duration-300 border-l-4 border-transparent hover:bg-accent hover:text-primary hover:border-secondary;
+	}
+	
+	.nav-link-active {
+		@apply bg-accent text-primary border-r-4 border-secondary;
+	}
+	
+	.nav-link-mobile-active {
+		@apply bg-accent text-primary border-l-4 border-secondary;
+	}
+}
