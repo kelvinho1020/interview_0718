@@ -43,7 +43,7 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
 
 			{/* 嘴 */}
 			<Wrapper className="-rotate-[8deg] z-0">
-				<div className="absolute bg-[#333] w-[40%] h-[20%] bottom-[33%] -right-[20%] rounded-[50%]" />
+				<div className="absolute bg-[#333] w-[40%] h-[20%] bottom-[35%] -right-[20%] rounded-[50%]" />
 				<div className="absolute bg-[#fff] w-[15%] h-[25%] bottom-[31%] right-[5%] z-[1]" />
 				<div className="absolute bg-[#fff] w-[35%] h-[20%] bottom-[22%] -right-[24%] z-[1]" />
 			</Wrapper>

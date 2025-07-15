@@ -3,6 +3,7 @@ import { NavProvider } from '../../../store/nav/NavContext';
 import NavList from './NavList';
 import Logo from '../../../components/logo/Logo';
 import Menu from './Menu';
+import { cn } from '../../../utils/cn';
 
 const navItems = [
 	{ id: '1', label: '白頭翁的特性', href: '#characteristics' },
@@ -17,7 +18,7 @@ const Navbar: React.FC = () => {
 	return (
 		<NavProvider>
 			<div className="bg-white flex flex-col items-center pt-[70px] mb:pt-[0] mb:h-fit">
-				<div className='relative flex justify-center w-full px-[24px] py-[16px] mb-[78px] mb:justify-between mb:items-center mb:mb-0'>
+				<div className={cn('relative flex justify-center w-full px-[24px] py-[16px] mb-[78px] mb:justify-between mb:items-center mb:mb-0', isOpen && 'mb:border-b mb:border-[#E6E7E8]')}>
 					<Menu
 						className="hidden mb:flex"
 						isOpen={isOpen}

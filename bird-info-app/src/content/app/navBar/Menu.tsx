@@ -19,7 +19,7 @@ const Menu: React.FC<MenuProps> = ({ className = "", isOpen, onClick }) => {
       <span
         className={cn(
           "block w-full border-b-4 border-black transition-transform duration-300 [transform-origin:1px_center]",
-          isOpen ? "rotate-45 w-[26px]" : ""
+          isOpen ? "rotate-45 w-[28px]" : ""
         )}
       />
       <span
@@ -31,7 +31,7 @@ const Menu: React.FC<MenuProps> = ({ className = "", isOpen, onClick }) => {
       <span
         className={cn(
           "block w-full border-b-4 border-black transition-transform duration-300 [transform-origin:1px_center]",
-          isOpen ? "-rotate-45 w-[26px]" : ""
+          isOpen ? "-rotate-45 w-[28px]" : ""
         )}
       />
     </div>
