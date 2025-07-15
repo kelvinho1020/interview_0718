@@ -10,7 +10,7 @@ export default {
 				primary: "#2c3e50",
 				secondary: "#3498db",
 				accent: "#e8f4f8",
-				"nav-active": "#AA6666",
+				"deepRed": "#AA6666",
 			},
 			fontFamily: {
 				sans: ["Noto Sans TC", "Arial", "Microsoft JhengHei", "sans-serif"],

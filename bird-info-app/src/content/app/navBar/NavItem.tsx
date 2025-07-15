@@ -1,27 +1,33 @@
-import React from 'react'
+import React from 'react';
+import { useNav } from '../../../store/nav';
 
 interface NavItemProps {
 	id: string;
 	label: string;
 	href: string;
-	isActive: boolean;
-	onClick: () => void;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ id, label, href, isActive, onClick }) => {
+const NavItem: React.FC<NavItemProps> = ({ id, label, href }) => {
+	const { activeId, setActiveId } = useNav();
+
+	const isActive = activeId === id;
+
+	function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+		e.preventDefault();
+		window.location.hash = href;
+		setActiveId(id);
+	}
+
 	return (
 		<li>
-			<a 
+			<a
 				href={href}
-				onClick={(e) => {
-					e.preventDefault();
-					onClick();
-				}}
+				onClick={handleClick}
 				className={`
-					block px-6 py-3 rounded-lg text-center font-medium text-[16px] transition-all duration-300 cursor-pointer
-					${isActive 
-						? 'bg-nav-active text-white border-2 border-nav-active' 
-						: 'bg-white text-gray-700 border-2 border-gray-200 hover:bg-gray-50 hover:border-gray-300'
+					text-[16px] transition-all duration-100 cursor-pointer
+					${isActive
+						? "text-deepRed border-b-2 border-deepRed font-[700]"
+						: "hover:text-deepRed hover:border-b-2 hover:border-deepRed hover:font-[700]"
 					}
 				`}
 			>
@@ -29,6 +35,6 @@ const NavItem: React.FC<NavItemProps> = ({ id, label, href, isActive, onClick })
 			</a>
 		</li>
 	);
-}
+};
 
 export default NavItem;

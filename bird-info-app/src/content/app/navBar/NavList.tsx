@@ -1,5 +1,5 @@
-import React from 'react'
-import NavItem from "./NavItem";
+import React from 'react';
+import NavItem from './NavItem';
 
 interface NavItemData {
 	id: string;
@@ -9,21 +9,16 @@ interface NavItemData {
 
 interface NavListProps {
 	navItems: NavItemData[];
-	activeId: string;
 }
 
-const NavList: React.FC<NavListProps> = ({ navItems, activeId }) => {
+const NavList: React.FC<NavListProps> = ({ navItems }) => {
 	return (
-		<ul className="flex flex-col gap-3">
+		<ul className="flex flex-col gap-[20px] mb:hidden">
 			{navItems.map((item) => (
-				<NavItem
-					key={item.id}
-					{...item}
-					isActive={activeId === item.id}
-				/>
+				<NavItem key={item.id} {...item} />
 			))}
 		</ul>
 	);
-}
+};
 
 export default NavList;

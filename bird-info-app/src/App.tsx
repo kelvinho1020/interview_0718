@@ -6,7 +6,7 @@ const App: React.FC = () => {
 	return (
 		<div className="grid grid-cols-[365px_1fr] mb:grid-cols-1 h-screen">
 			<Navbar />
-			<main>
+			<main className="">
 				<HeroBanner />
 			</main>
 		</div>
