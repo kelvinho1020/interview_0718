@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavProvider } from '../../../store/nav/NavContext';
 import NavList from './NavList';
 import Logo from '../../../components/logo/Logo';
 import Menu from './Menu';
 import { cn } from '../../../utils/cn';
+import { useIsMobile } from "../../../hooks/useIsMobile";
 
 const navItems = [
 	{ id: '1', label: '白頭翁的特性', href: '#characteristics' },
@@ -13,8 +14,13 @@ const navItems = [
 ];
 
 const Navbar: React.FC = () => {
-	const [isOpen, setIsOpen] = useState(false);
+	const isMobile = useIsMobile();
+	const [isOpen, setIsOpen] = useState(!isMobile);
 
+	useEffect(() => {
+		setIsOpen(!isMobile);
+	}, [isMobile])
+	
 	return (
 		<NavProvider>
 			<div className="bg-white flex flex-col items-center pt-[70px] mb:pt-[0] mb:h-fit">
@@ -27,7 +33,7 @@ const Navbar: React.FC = () => {
 					<h1 className="font-[700] text-[30px] mb:mb-[0] mb:text-[18px]">白頭翁不吃小米</h1>
 					<Logo className="
 						absolute right-0 top-[50%] translate-x-1/2 -translate-y-1/2
-						mb:static mb:translate-x-0 mb:translate-y-0 mb:h-[40px] mb:w-[40px]
+						mb:static mb:translate-x-0 mb:translate-y-0 mb:h-[40px] mb:w-[40px] z-[1]
 					"/>
 				</div>
 				{isOpen && <NavList navItems={navItems} />}

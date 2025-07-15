@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import { BREAKPOINTS } from "./src/constants/breakpoints";
+
 export default {
 	content: [
 		"./index.html",
@@ -17,7 +19,8 @@ export default {
 			},
 		},
 		screens: {
-			'mb': {'max': '767px'},
+			'tl': {'max': `${BREAKPOINTS.tabletMax}px`},
+			'mb': {'max': `${BREAKPOINTS.mobileMax}px`},
 		},
 	},
 	plugins: [],
