@@ -13,7 +13,7 @@ interface NavListProps {
 
 const NavList: React.FC<NavListProps> = ({ navItems }) => {
 	return (
-		<ul className="flex flex-col gap-[20px] mb:hidden">
+		<ul className="flex flex-col gap-[20px]">
 			{navItems.map((item) => (
 				<NavItem key={item.id} {...item} />
 			))}
