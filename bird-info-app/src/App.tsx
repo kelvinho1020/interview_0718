@@ -8,12 +8,15 @@ const heroBannerItem = {
 	image: "/images/heroBanner.webp",
 }
 
+const SIDEBAR_WIDTH = "365px";
+
 const App: React.FC = () => {
 
 	return (
-		<div className="grid grid-cols-[365px_1fr] tl:grid-cols-[300px_1fr] bg-[#dcccbc] mb:grid-cols-1 h-screen mb:h-auto">
+		<div className=" bg-[#dcccbc] mb:h-auto min-h-screen mb:flex mb:flex-col">
+		{/* <div className="grid grid-cols-[365px_1fr] bg-[#dcccbc] mb:grid-cols-1 mb:h-auto min-h-screen mb:flex mb:flex-col"> */}
 			<Navbar />
-			<main className="">
+			<main className="ml-[365px] mb:ml-0">
 				<HeroBanner {...heroBannerItem}/>
 				<Description />
 			</main>

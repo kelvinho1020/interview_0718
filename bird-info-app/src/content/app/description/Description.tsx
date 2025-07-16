@@ -20,9 +20,9 @@ const DescriptionItems = [
 
 const Description: React.FC<DescriptionProps> = ({}) => {
   return (
-    <div className="grid grid-cols-[1fr_1fr_1fr] tl:grid-cols-[1fr] gap-[48px] p-[60px]">
+    <div className="grid grid-cols-[1fr_1fr_1fr] mb:grid-cols-[1fr] gap-[48px] p-[60px] mb:px-[48px]">
       {DescriptionItems.map(item => (
-        <DescriptionItem  {...item} />
+        <DescriptionItem key={item.title} {...item} />
       ))}
     </div>
   );

@@ -5,25 +5,21 @@ import Logo from '../../../components/logo/Logo';
 import Menu from './Menu';
 import { cn } from '../../../utils/cn';
 import { useIsMobile } from "../../../hooks/useIsMobile";
-
-const navItems = [
-	{ id: '1', label: '白頭翁的特性', href: '#characteristics' },
-	{ id: '2', label: '白頭翁的故事', href: '#story' },
-	{ id: '3', label: '白頭翁的美照', href: '#photos' },
-	{ id: '4', label: '白頭翁的危機', href: '#crisis' }
-];
+import { useClickOutside } from '../../../hooks/useClickOutside';
+import { navItems } from './data';
 
 const Navbar: React.FC = () => {
 	const isMobile = useIsMobile();
 	const [isOpen, setIsOpen] = useState(!isMobile);
-
+	const ref = useClickOutside<HTMLDivElement>(() => isMobile && setIsOpen(false));
+	
 	useEffect(() => {
 		setIsOpen(!isMobile);
 	}, [isMobile])
 	
 	return (
 		<NavProvider>
-			<div className="bg-white flex flex-col items-center pt-[70px] mb:pt-[0] mb:h-fit">
+			<nav ref={ref} className="fixed z-[1] w-[365px] h-screen left-0 top-0 bg-white flex flex-col items-center pt-[70px] mb:w-full mb:static mb:pt-[0] mb:h-fit mb:shadow-[0px_4px_20px_0px_#00000014]">
 				<div className={cn('relative flex justify-center w-full px-[24px] py-[16px] mb-[78px] mb:justify-between mb:items-center mb:mb-0', isOpen && 'mb:border-b mb:border-[#E6E7E8]')}>
 					<Menu
 						className="hidden mb:flex"
@@ -37,7 +33,7 @@ const Navbar: React.FC = () => {
 					"/>
 				</div>
 				{isOpen && <NavList navItems={navItems} />}
-			</div>
+			</nav>
 		</NavProvider>
 	);
 };
