@@ -1,6 +1,5 @@
 import React from "react";
-import { Navbar, HeroBanner } from "./content/app";
-import { Description } from "./content/app/description";
+import { Navbar, HeroBanner, Description } from "./content/app";
 
 const heroBannerItem = {
 	title: "白頭翁 (Chinese bulbul)",
@@ -14,7 +13,6 @@ const App: React.FC = () => {
 
 	return (
 		<div className=" bg-[#dcccbc] mb:h-auto min-h-screen mb:flex mb:flex-col">
-		{/* <div className="grid grid-cols-[365px_1fr] bg-[#dcccbc] mb:grid-cols-1 mb:h-auto min-h-screen mb:flex mb:flex-col"> */}
 			<Navbar />
 			<main className="ml-[365px] mb:ml-0">
 				<HeroBanner {...heroBannerItem}/>

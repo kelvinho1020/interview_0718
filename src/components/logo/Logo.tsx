@@ -36,7 +36,7 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
 				/>
 			</Wrapper>
 
-			{/* 眼睛 */}
+			{/* 眼 */}
 			<Wrapper className="z-[3]">
 				<div className="absolute bg-[#333] w-[20%] h-[20%] right-[20%] top-1/2 -translate-y-1/2 rounded-[50%] z-[3]" />
 			</Wrapper>
