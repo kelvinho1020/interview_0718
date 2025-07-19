@@ -16,7 +16,7 @@ const App: React.FC = () => {
 		<div className=" bg-[#dcccbc] mb:h-auto min-h-screen mb:flex mb:flex-col">
 			<Navbar />
 			<main
-				 className="ml-[365px] mb:ml-0" 
+				 className="mb:ml-0" 
 				 style={{ marginLeft: isMobile ? "0px" : `${LAYOUT.SIDEBAR_WIDTH}px` }}
 			>
 				<HeroBanner {...heroBannerItem}/>
