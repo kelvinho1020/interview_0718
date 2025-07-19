@@ -17,6 +17,16 @@ export default {
 			fontFamily: {
 				sans: ["Noto Sans TC", "Arial", "Microsoft JhengHei", "sans-serif"],
 			},
+			spacing: {
+				'sidebar': '365px',
+			},
+			width: {
+				'sidebar': '365px',
+			},
+			gridTemplateColumns: {
+				'layout': '365px 1fr',
+				'layout-sm': '280px 1fr',
+			}
 		},
 		screens: {
 			'tl': {'max': `${BREAKPOINTS.tabletMax}px`},

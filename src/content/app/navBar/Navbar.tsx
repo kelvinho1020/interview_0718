@@ -7,6 +7,7 @@ import { cn } from '../../../utils/cn';
 import { useIsMobile } from "../../../hooks/useIsMobile";
 import { useClickOutside } from '../../../hooks/useClickOutside';
 import { navItems } from './data';
+import { LAYOUT } from "../../../constants/layout";
 
 const Navbar: React.FC = () => {
 	const isMobile = useIsMobile();
@@ -19,7 +20,11 @@ const Navbar: React.FC = () => {
 	
 	return (
 		<NavProvider>
-			<nav ref={ref} className="fixed z-[1] w-[365px] h-screen left-0 top-0 bg-white flex flex-col items-center pt-[70px] mb:w-full mb:static mb:pt-[0] mb:h-fit mb:shadow-[0px_4px_20px_0px_#00000014]">
+			<nav 
+				ref={ref} 
+				className="fixed z-[1] h-screen left-0 top-0 bg-white flex flex-col items-center pt-[70px] mb:static mb:pt-[0] mb:h-fit mb:shadow-[0px_4px_20px_0px_#00000014]"
+				style={{ width: isMobile ? "100%" : `${LAYOUT.SIDEBAR_WIDTH}px`}}
+			>
 				<div className={cn('relative flex justify-center w-full px-[24px] py-[16px] mb-[78px] mb:justify-between mb:items-center mb:mb-0', isOpen && 'mb:border-b mb:border-[#E6E7E8]')}>
 					<Menu
 						className="hidden mb:flex"
